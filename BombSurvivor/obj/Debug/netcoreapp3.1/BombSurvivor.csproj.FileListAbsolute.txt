@@ -37,3 +37,5 @@ C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurviv
 C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurvivor\BombSurvivor\bin\Debug\netcoreapp3.1\Content\bomb.xnb
 C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurvivor\BombSurvivor\bin\Debug\netcoreapp3.1\Content\girl.xnb
 C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurvivor\BombSurvivor\bin\Debug\netcoreapp3.1\Content\sea.xnb
+C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurvivor\BombSurvivor\bin\Debug\netcoreapp3.1\Content\Score.xnb
+C:\Users\f3st_\Documents\Programación\C#\monogame\yt oyyou tutorials\BombSurvivor\BombSurvivor\bin\Debug\netcoreapp3.1\Content\HighScore.xnb

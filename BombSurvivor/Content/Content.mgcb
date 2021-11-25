@@ -25,6 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:bomb.png
 
+#begin File.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:File.spritefont;Score.spritefont
+
 #begin girl.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -36,6 +43,13 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:girl.png
+
+#begin HighScore.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:HighScore.spritefont
 
 #begin sea.png
 /importer:TextureImporter

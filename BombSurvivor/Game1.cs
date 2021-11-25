@@ -9,6 +9,9 @@ namespace BombSurvivor
 {
     public class Game1 : Game
     {
+        //Made By: Dylan Valdez Garcia
+                
+        
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
@@ -17,8 +20,12 @@ namespace BombSurvivor
         public static int ScreenWidth;
         public static int ScreenHeight;
 
+        private int _score = 0;
+        private int _highScore = 0;
         private List<Sprite> _sprites;
-        private Texture2D background;
+        private Texture2D _background;
+        private SpriteFont _font;
+        private SpriteFont _highScoreFont;
         private float _timer;
         private bool _hasStarted = false;
         
@@ -44,7 +51,7 @@ namespace BombSurvivor
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            background = Content.Load<Texture2D>("sea");
+            _background = Content.Load<Texture2D>("sea");
             Restart();
 
             // TODO: use this.Content to load your game content here
@@ -52,7 +59,10 @@ namespace BombSurvivor
 
         private void Restart()
         {
+            _score = 0;
             var playerTexture = Content.Load<Texture2D>("girl");
+            _font = Content.Load<SpriteFont>("Score");
+            _highScoreFont = Content.Load<SpriteFont>("HighScore");
 
             _sprites = new List<Sprite>()
             {
@@ -79,6 +89,8 @@ namespace BombSurvivor
                 Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
             _hasStarted = true;
+
+            _score++;
 
             if (!_hasStarted)
                 return;
@@ -110,6 +122,9 @@ namespace BombSurvivor
                     var player = sprite as Player;
                     if (player.HasDied)
                     {
+                        if(_score>_highScore)
+                            _highScore = _score;
+                        
                         Restart();
                     }
                 }
@@ -125,7 +140,12 @@ namespace BombSurvivor
             GraphicsDevice.Clear(Color.CornflowerBlue);
             
             _spriteBatch.Begin();
-            _spriteBatch.Draw(background, new Rectangle(0, 0, 800, 600), Color.White);
+            _spriteBatch.Draw(_background, new Rectangle(0, 0, 800, 600), Color.White);
+            if (_highScore>0)
+            {
+                _spriteBatch.DrawString(_highScoreFont,"High Score: " + _highScore, new Vector2(30,35), Color.White);
+            }
+            _spriteBatch.DrawString(_font,"Score: " + _score ,new Vector2(30,50),Color.White);
             foreach(var sprite in _sprites)
                 sprite.Draw(_spriteBatch);
             
